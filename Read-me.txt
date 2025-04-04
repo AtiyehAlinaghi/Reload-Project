@@ -1,0 +1,55 @@
+
+How to Use the Reload Data Import Tool
+
+1- Download the Data Folder
+
+Obtain a dated folder (e.g., reload_03_03_2025) from the Reload Project SharePoint.
+Access can be authorized upon request.
+
+2- Prepare the Directory Structure
+
+Place the jsonlab-master folder inside the downloaded folder (e.g., reload_03_03_2025/jsonlab-master).
+This is required to enable reading .json files.
+
+3- Run the MATLAB Script
+
+Use the MATLAB file import_reload_data_summary.m. This script:
+
+Iterates through all folders within the reload directory.
+
+Extracts demographic information and recording data.
+
+Saves a summary in an Excel file.
+
+4- Update the Script Before Running
+
+Set the correct parent folder path.
+
+Specify the desired Excel file name.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Once you have the summary Excel file, e.g.:
+
+excel_file = "Data_Reload_03032025_daily_update.xlsx"
+
+1- Select Your Dataset
+
+- The entire dataset.
+
+- A specific subgroup sharing the same demographic information.
+
+- Participants with at least 3 days of recordings for HMM tracking.
+
+2- Extract Features and Labels
+
+Use the Python script "reload_audio_feature_extraction_label.py" to:
+
+- Go through all the folders and files to access the audio files,
+& extract different sets of related acoustic features and associated labels.
+
+3- Run Classification and Evaluation
+With features and labels ready, run "reload_rti_svm_classification.py" to:
+
+- Perform SVM classification & evaluate the performance.
+
